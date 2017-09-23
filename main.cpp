@@ -3,11 +3,8 @@ const std::string hello = "Hello, ";
 
 int main(int argc, char *argv[]) {
     std::string greater;
-    if(argc > 1){
-        for(int i = 1; i< argc; i++){
-            greater += hello + argv[i] + "!\n";
-        }
-    } else  greater += hello + " World!";
-    std::cout << greater << std::endl;
+    std::cout << "What is your name?" << std::endl;
+    getline (std::cin, greater);
+    std::cout << hello + greater + "!" << std::endl;
     return 0;
 }
