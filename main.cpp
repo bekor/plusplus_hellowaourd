@@ -1,20 +1,13 @@
 #include <iostream>
-std::string printArguments(char *argv[], int argc);
+const std::string hello = "Hello, ";
 
 int main(int argc, char *argv[]) {
-    std::string greater = "Hello, ";
+    std::string greater;
     if(argc > 1){
-        greater += printArguments(argv, argc);
-    } else  greater += " World!";
+        for(int i = 1; i< argc; i++){
+            greater += hello + argv[i] + "!\n";
+        }
+    } else  greater += hello + " World!";
     std::cout << greater << std::endl;
     return 0;
-}
-
-std::string printArguments(char *argv[], int argc){
-    std::string arguments = "";
-    for(int i = 1; i< argc; i++){
-        arguments += argv[i];
-        arguments += " ";
-    }
-    return arguments + "!";
 }
